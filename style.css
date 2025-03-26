@@ -1,0 +1,361 @@
+body {
+  margin: 0;
+  background-image: url("background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#titleBibliografie {
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 35px;
+  margin-bottom: 0px;
+  margin-left: 130px;
+  margin-top: 3px;
+}
+.navbar {
+  overflow: hidden;
+  justify-content: center;
+  display: flex;
+  margin-top: 0px;
+  margin-left: 130px;
+  
+  
+}
+
+.navbar a {
+  float: left;
+  font-size: 18px;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  
+}
+.navbar a,
+.dropdown .dropbtn {
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    border-radius 0.3s ease;
+  border-radius: 20px;
+  display: inline-block;
+  text-align: center;
+  padding: 14px 16px;
+}
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+  background-color: hsl(278, 48%, 91%);
+  transform: scale(1.05); /* Slightly enlarges while keeping shape */
+  border-radius: 20px; /* Ensures it remains rounded */
+}
+.navbar a:not(:hover),
+.dropdown .dropbtn:not(:hover) {
+  transform: translateY(0);
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.dropdown .dropbtn {
+  font-size: 18px;
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  border-radius: 20px;
+}
+
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+  background-color: hsl(278, 48%, 91%);
+  border-radius: 20px;
+}
+
+.dropdown-content {
+  display: block;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  position: absolute;
+  background-color: hsl(0, 0%, 86%);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px hsla(0, 0%, 0%, 0.2);
+  z-index: 1;
+  border-radius: 20px;
+  margin-top: 0;
+  visibility: hidden;
+}
+
+.dropdown-content a {
+  float: none;
+  color: hsl(0, 0%, 0%);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: hsl(278, 62%, 84%);
+}
+
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
+}
+.dropdown .dropdown-content {
+  pointer-events: none;
+}
+#minister {
+  width: 230px;
+  float: left;
+  position: absolute;
+  margin-left: 50px;
+}
+.bibliografie li {
+  padding: 7px;
+  font-size: 20px;
+  list-style-type: disc;
+  font-family: "Times New Roman", Times, serif;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+#cnch {
+  float: right;
+  margin-left: 20px;
+  margin-right: 50px;
+  width: 80px;
+}
+.title {
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 32px;
+  margin-bottom: 0px;
+  margin-left: 130px;
+  margin-top: 3px;
+  text-decoration: underline;
+}
+.container{
+  width: 9;
+}
+.def {
+  margin-left: 200px;
+  margin-right: 160px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-indent: 30px;
+}
+.def2 {
+  margin-left: 240px;
+  margin-right: 160px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.dictionarText {
+  margin-left: 120px;
+  margin-right: 120px;
+  font-size: 20px;
+}
+.dictionarUltim {
+  margin-left: 120px;
+  margin-right: 120px;
+  margin-bottom: 60px;
+  font-size: 20px;
+}
+.subCapitol {
+  margin-left: 120px;
+  margin-right: 120px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 21px;
+}
+.listeSubcapitole a {
+  text-decoration: none;
+  color: hsl(240, 87%, 50%);
+}
+.numeCapitol {
+  margin-left: 120px;
+  margin-right: 120px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 23px;
+}
+.subcapTitlu {
+  text-align: center;
+  font-size: 25px;
+}
+.capText {
+  margin-left: 120px;
+  margin-right: 120px;
+  font-size: 20px;
+  text-indent: 60px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#comunicare-tabel {
+  width: 80%;
+  border-collapse: collapse;
+  margin: auto;
+}
+
+#comunicare-th,
+.comunicare-td {
+  border: 1px solid hsl(0, 0%, 0%);
+  padding: 12px;
+  text-align: left;
+}
+
+#comunicare-th {
+  background-color: hsl(312, 91%, 43%);
+  color: hsl(0, 0%, 100%);
+}
+
+.comunicare-td b {
+  color: hsl(312, 91%, 43%);
+}
+
+#comunicare-tabel tbody tr:nth-child(even) {
+  background-color: hsl(0, 0%, 95%);
+}
+
+#tabel-limbaj {
+  width: 80%;
+  border-collapse: collapse;
+  margin: auto;
+}
+#elemente-th,
+.elemente-td {
+  border: 1px solid hsl(0, 0%, 0%);
+  padding: 12px;
+  text-align: left;
+}
+#elemente-th {
+  background-color: hsl(312, 91%, 43%);
+  color: hsl(0, 0%, 100%);
+}
+.elemente-td b {
+  color: hsl(312, 91%, 43%);
+}
+#tabel-limbaj tbody tr:nth-child(even) {
+  background-color: hsl(0, 0%, 95%);
+}
+#schema1 {
+  width: 700px;
+}
+#schema2 {
+  width: 700px;
+}
+#schema3 {
+  width: 700px;
+}
+#schema4 {
+  width: 400px;
+  height: 350px;
+}
+#schema5 {
+  width: 600px;
+  height: 500px;
+}
+#schema6 {
+  width: 600px;
+  height: 250px;
+}
+.lista {
+  margin-left: 240px;
+  margin-right: 160px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.lista2 {
+  margin-left: 50px;
+  margin-right: 160px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.lista3 {
+  margin-left: 100px;
+  margin-right: 160px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.lista4 {
+  margin-left: 300px;
+  margin-right: 160px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.def3list {
+  margin-left: 80px;
+  margin-right: 160px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.def3 {
+  margin-left: 280px;
+  margin-right: 160px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.deflista {
+  margin-left: 60px;
+  margin-right: 160px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  text-indent: 30px;
+}
+
+#schema7 {
+  width: 700px;
+  height: 500px;
+}
+
+.indent {
+  text-indent: 20px;
+}
+#schema8 {
+  width: 500px;
+  height: 250px;
+}
+.com {
+  text-indent: 20px;
+}
+.footer{
+  background-color: rgb(173, 164, 164);
+  opacity: 70%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  
+  height: 70px;
+}
+.footerContent{
+  align-items: center;
+  
+  margin-bottom: 100px;
+}
