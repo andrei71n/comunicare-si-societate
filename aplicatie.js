@@ -178,7 +178,7 @@ function showResult() {
   questionElement.innerText = "";
 
   let message = "";
-  if (nuSuntSigurCount >= quizData.length - 2) {
+  if (nuSuntSigurCount >= quizData.length - 4) {
     message = "Nerelevant";
   } else if (score <= 5) {
     message = "Material cu grad mic de credibilitate";
