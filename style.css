@@ -5,6 +5,10 @@ body {
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
+  height: 100%;
+  margin: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
 html {
@@ -44,12 +48,14 @@ html {
   display: inline-block;
   text-align: center;
   padding: 14px 16px;
+  overflow: hidden;
 }
 .navbar a:hover,
 .dropdown:hover .dropbtn {
-  background-color: hsl(278, 48%, 91%);
+  background-color: hsl(180, 17%, 91%);
   transform: scale(1.05);
   border-radius: 20px;
+  overflow: hidden;
 }
 .navbar a:not(:hover),
 .dropdown .dropbtn:not(:hover) {
@@ -102,7 +108,7 @@ html {
   padding: 8px 16px;
   text-decoration: none;
   display: block;
-  text-align: left;
+  text-align: center;
 }
 
 .dropdown-content a:hover {
@@ -136,7 +142,7 @@ html {
   color: hsl(0, 0%, 0%);
   margin-top: 35px;
 }
-main {
+.main-content {
   flex: 1;
 }
 .bibliografie li {
@@ -188,12 +194,22 @@ main {
 .dictionarUltim {
   margin-left: 120px;
   margin-right: 120px;
-  
+
   font-size: 20px;
+}
+.listaa {
+  margin-left: 130px;
+  font-size: 22px;
 }
 .subCapitol {
   margin-left: 120px;
   margin-right: 120px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 21px;
+}
+.subCapitol1 {
+  margin-left: 20px;
+  margin-right: 20px;
   font-family: "Times New Roman", Times, serif;
   font-size: 21px;
 }
@@ -394,35 +410,44 @@ main {
   background-color: hsl(207, 100%, 40%);
 }
 
+#question {
+  font-size: 23px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
 .app {
-  background-color: hsl(0, 0%, 100%);
+  background-color: hsl(0, 4%, 77%);
   width: 80%;
   max-width: 600px;
   margin: 30px auto 30px;
   border-radius: 10px;
   padding: 30px;
 }
+
 .app h1 {
-  font-size: 28px;
+  font-size: 30px;
   color: hsl(0, 0%, 0%);
   font-weight: 600;
   border-bottom: 1px solid hsl(0, 2%, 22%);
   padding-bottom: 30px;
+  text-align: center;
 }
 .quiz {
   padding: 20px 0;
 }
 .quiz h2 {
-  font-size: 22px;
+  font-size: 23px;
   color: hsl(0, 0%, 0%);
   font-weight: 600;
 }
 .btn {
-  background: hsl(0, 0%, 100%);
+  background: hsl(0, 1%, 66%);
   color: hsl(0, 0%, 0%);
   font-weight: 500;
+  font-size: 15px;
   width: 100%;
-  border: 1px solid hsl(253, 93%, 35%);
+  border: 1px solid hsl(0, 0%, 0%);
   padding: 10px;
   margin: 10px 0;
   text-align: center;
@@ -431,14 +456,14 @@ main {
   transition: all 0.2s;
 }
 .btn:hover:not([disabled]) {
-  background: hsla(214, 92%, 42%, 0.916);
+  background: hsla(214, 76%, 47%, 0.822);
   color: hsl(0, 0%, 100%);
 }
 .btn:disabled {
   cursor: no-drop;
 }
 #next-btn {
-  background-color: hsl(217, 100%, 15%);
+  background-color: hsl(242, 100%, 60%);
   color: hsl(0, 0%, 100%);
   font-weight: 500;
   width: 150px;
@@ -448,10 +473,118 @@ main {
   border-radius: 5px;
   cursor: pointer;
   display: none;
+  transition: all 0.2s;
+}
+#next-btn:hover {
+  background-color: hsl(223, 100%, 70%);
+  color: hsl(0, 0%, 0%);
 }
 .correct {
   background: hsla(120, 100%, 25%, 0.904);
 }
 .incorrect {
   background: hsla(0, 100%, 50%, 0.92);
+}
+.textdesign {
+  font-size: 24px;
+  margin-left: 150px;
+  font-weight: bolder;
+}
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 0;
+}
+
+.app2 {
+  background-color: hsl(0, 4%, 77%);
+  width: 80%;
+  max-width: 500px;
+  margin: 30px 0 30px;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.app2 h1 {
+  font-size: 30px;
+  color: hsl(0, 0%, 0%);
+  font-weight: 600;
+  border-bottom: 1px solid hsl(0, 2%, 22%);
+  padding-bottom: 30px;
+  text-align: center;
+}
+.quiz {
+  padding: 2px 0;
+}
+.quiz h2 {
+  font-size: 23px;
+  color: hsl(0, 0%, 0%);
+  font-weight: 600;
+}
+.btn {
+  background: hsl(0, 1%, 66%);
+  color: hsl(0, 0%, 0%);
+  font-weight: 500;
+  font-size: 15px;
+  width: 100%;
+  border: 1px solid hsl(0, 0%, 0%);
+  padding: 10px;
+  margin: 10px 0;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn:hover:not([disabled]) {
+  background: hsla(261, 50%, 49%, 0.822);
+  color: hsl(0, 0%, 100%);
+}
+.btn:disabled {
+  cursor: no-drop;
+}
+#next-btn2 {
+  background-color: hsl(242, 100%, 60%);
+  color: hsl(0, 0%, 100%);
+  font-weight: 500;
+  width: 150px;
+  border: 0;
+  padding: 10px;
+  margin: 20px auto 0;
+  border-radius: 5px;
+  cursor: pointer;
+  display: none;
+  transition: all 0.2s;
+}
+#next-btn2:hover {
+  background-color: hsl(223, 99%, 65%);
+  color: hsl(0, 0%, 0%);
+}
+.correct {
+  background: hsla(120, 100%, 25%, 0.904);
+}
+.incorrect {
+  background: hsla(0, 100%, 50%, 0.92);
+}
+#question2 {
+  font-size: 23px;
+  text-align: center;
+}
+
+#restart-btn {
+  background-color: hsl(242, 100%, 60%);
+  color: white;
+  font-weight: 500;
+  width: 150px;
+  border: 0;
+  padding: 10px;
+  margin: 40px auto 50px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: none;
+  transition: all 0.2s;
+  display: none;
+}
+
+#restart-btn:hover {
+  background-color: hsl(223, 100%, 70%);
 }

@@ -9,7 +9,6 @@
   <body>
     <header>
       <div class="header">
-        
         <img
           src="images/cnch.jpg"
           alt="Colegiul National Calistrat Hogas"
@@ -17,12 +16,18 @@
         />
 
         <div class="navbar">
-          <a href="acasa.html">Acasă</a>
           <div class="dropdown">
-            <button class="dropbtn">
-              Conținut
-              <i class="ceva"></i>
-            </button>
+            <button class="dropbtn">Acasă</button>
+            <div class="dropdown-content">
+              <a href="acasa.html#titluacasa">Comunicarea</a>
+              <a href="acasa.html#exercitiuacasa">Exerciții</a>
+              <a href="acasa.html#obiectiveacasa">Obiective</a>
+              <a href="acasa.html#competenteacasa">Competențe</a>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <button class="dropbtn">Conținut</button>
             <div class="dropdown-content">
               <a href="cap2.html">Aspecte logice ale comunicării</a>
               <a href="cap3.html">Aspecte psihologice ale comunicării</a>
@@ -43,7 +48,7 @@
 
     <main>
       <div class="app">
-        <h1>Răspunde-ți următoarelor întrebari.</h1>
+        <h1 id="inceput">Răspunde-ți următoarelor întrebari:</h1>
         <div class="quiz">
           <h2 id="question">Question goes here</h2>
           <div id="answer-buttons">
@@ -52,7 +57,7 @@
             <button class="btn">Answer 3</button>
             <button class="btn">Answer 4</button>
           </div>
-          <button id="next-btn">Next</button>
+          <button id="next-btn">Următoarea întrebare</button>
         </div>
       </div>
     </main>
