@@ -28,7 +28,7 @@ html {
   justify-content: center;
   display: flex;
   margin-top: 0px;
-  margin-right: 40px;
+  margin-left: 130px;
 }
 
 .navbar a {
@@ -156,9 +156,15 @@ html {
 #cnch {
   float: left;
   margin-left: 20px;
-
   width: 50px;
   padding-top: 10px;
+}
+
+#logo {
+  float: right;
+  margin-right: 20px;
+  width: 65px;
+  padding-top: 2px;
 }
 .title {
   text-align: center;
