@@ -2,8 +2,8 @@ const quizData = [
   {
     question: "Autorul știrii este anonim?",
     options: [
-      { text: "Da", score: -1 },
-      { text: "Nu", score: 1 },
+      { text: "Da", score: -2 },
+      { text: "Nu", score: 2 },
       { text: "Nu sunt sigur", score: 0 },
     ],
   },
@@ -11,8 +11,8 @@ const quizData = [
     question:
       "Autorul știrii este autorizat să vorbească pe subiectul propus de material (este o sursă oficială, autorizată, cu pregătire de specialitate pe tema vizată de articol)?",
     options: [
-      { text: "Da", score: 1 },
-      { text: "Nu", score: -1 },
+      { text: "Da", score: 2 },
+      { text: "Nu", score: -2 },
       { text: "Nu sunt sigur", score: 0 },
     ],
   },
@@ -20,8 +20,8 @@ const quizData = [
     question:
       "Site-ul sau sursa media pe care a fost promovată știrea sunt cunoscute?",
     options: [
-      { text: "Da", score: 1 },
-      { text: "Nu", score: -1 },
+      { text: "Da", score: 2 },
+      { text: "Nu", score: -2 },
       { text: "Nu sunt sigur", score: 0 },
     ],
   },
@@ -29,8 +29,8 @@ const quizData = [
     question:
       "Știrea este creată și prezentată tendențios, cu susținerea unilaterală a unei anumite perspective subiective?",
     options: [
-      { text: "Da", score: -1 },
-      { text: "Nu", score: 1 },
+      { text: "Da", score: -1.5 },
+      { text: "Nu", score: 1.5 },
       { text: "Nu sunt sigur", score: 0 },
     ],
   },
@@ -38,8 +38,8 @@ const quizData = [
     question:
       "Știrea face abstracție de diversitatea punctelor de vedere și a aspectelor problemei, punând accentul pe o singură abordare/ perspectivă?",
     options: [
-      { text: "Da", score: -1 },
-      { text: "Nu", score: 1 },
+      { text: "Da", score: -1.5 },
+      { text: "Nu", score: 1.5 },
       { text: "Nu sunt sigur", score: 0 },
     ],
   },
@@ -47,16 +47,16 @@ const quizData = [
     question:
       "Informația promovată aduce autorului sau unor grupuri de interese câștig economic, politic sau de altă natură?",
     options: [
-      { text: "Da", score: -1 },
-      { text: "Nu", score: 1 },
+      { text: "Da", score: -2 },
+      { text: "Nu", score: 2 },
       { text: "Nu sunt sigur", score: 0 },
     ],
   },
   {
     question: "Lipsesc confirmările din surse autorizate, oficiale?",
     options: [
-      { text: "Da", score: -1 },
-      { text: "Nu", score: 1 },
+      { text: "Da", score: -2 },
+      { text: "Nu", score: 2 },
       { text: "Nu sunt sigur", score: 0 },
     ],
   },
@@ -64,8 +64,8 @@ const quizData = [
     question:
       "Informația este prezentată dintr-o perspectivă subiectivă, cu “argumente” emoționale? Mesajul face apel excesiv la emoțiile cititorului?",
     options: [
-      { text: "Da", score: -1 },
-      { text: "Nu", score: 1 },
+      { text: "Da", score: -1.5 },
+      { text: "Nu", score: 1.5 },
       { text: "Nu sunt sigur", score: 0 },
     ],
   },
@@ -73,8 +73,8 @@ const quizData = [
     question:
       "Informația este prezentată complet diferit și cu argumente obiective de către alte surse media?",
     options: [
-      { text: "Da", score: -1 },
-      { text: "Nu", score: 1 },
+      { text: "Da", score: -2 },
+      { text: "Nu", score: 2 },
       { text: "Nu sunt sigur", score: 0 },
     ],
   },
@@ -82,8 +82,8 @@ const quizData = [
     question:
       "Este informația prezentată la modul impersonal (se crede, se aude, se spune, există “specialiști” care susțin că….)",
     options: [
-      { text: "Da", score: -1 },
-      { text: "Nu", score: 1 },
+      { text: "Da", score: -1.5 },
+      { text: "Nu", score: 1.5 },
       { text: "Nu sunt sigur", score: 0 },
     ],
   },
@@ -108,8 +108,8 @@ const quizData = [
     question:
       "Lipsesc dovezile evidente că “specialiștii” la care se face referire în material au făcut afirmațiile pretinse de material?",
     options: [
-      { text: "Da", score: -1 },
-      { text: "Nu", score: 1 },
+      { text: "Da", score: -2 },
+      { text: "Nu", score: 2 },
       { text: "Nu sunt sigur", score: 0 },
     ],
   },
@@ -117,8 +117,8 @@ const quizData = [
     question:
       "Se pot constata abateri, aproximări, re-interpretări, reformulări abuzive ale mesajelor formulate de autorități/ specialiști/ surse oficiale?",
     options: [
-      { text: "Da", score: -1 },
-      { text: "Nu", score: 1 },
+      { text: "Da", score: -2 },
+      { text: "Nu", score: 2 },
       { text: "Nu sunt sigur", score: 0 },
     ],
   },
@@ -178,17 +178,29 @@ function showResult() {
   questionElement.innerText = "";
 
   let message = "";
+  let color = "";
+
   if (nuSuntSigurCount >= quizData.length - 4) {
-    message = "Nerelevant";
-  } else if (score <= 5) {
-    message = "Material cu grad mic de credibilitate";
+    message = "⚠️ Rezultatul este nerelevant – ai selectat prea multe răspunsuri „Nu sunt sigur”.";
+    color = "#555555";
+  } else if (score <= 0) {
+    message = "❌ Material cu risc ridicat de a fi o știre falsă.";
+    color = "#8B0000";
+  } else if (score <= 14) {
+    message = "⚠️ Material parțial credibil – necesită verificări suplimentare.";
+    color = "#996600";
   } else {
-    message = "Material cu grad de credibilitate ridicat";
+    message = "✅ Material cu grad ridicat de credibilitate.";
+    color = "#006400";
   }
 
   resultElement.innerText = message;
+  resultElement.style.color = color;
+  resultElement.style.fontWeight = "bold";
+  resultElement.style.textAlign = "center";
   restartButton.style.display = "block";
 }
+
 
 function restartQuiz() {
   startQuiz();
