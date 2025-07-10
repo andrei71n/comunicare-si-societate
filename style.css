@@ -55,8 +55,10 @@ html {
   text-align: center;
   padding: 14px 16px;
   overflow: hidden;
-  margin-left: 15px;
+
 }
+
+
 .navbar a:hover,
 .dropdown:hover .dropbtn {
   background-color: hsl(180, 17%, 91%);
@@ -73,8 +75,9 @@ html {
   float: left;
   overflow: hidden;
   border-radius: 20px;
-  margin-left: 15px;
+
 }
+
 
 .dropdown .dropbtn {
   font-size: 18px;
